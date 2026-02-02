@@ -52,6 +52,89 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
 
+## 📁 Workspace Organization (MANDATORY)
+
+This workspace is organized for web development work. **NEVER** create files in the root directory.
+
+### Directory Structure
+
+```
+workspace/
+├── projects/           # ALL git repositories and code projects
+├── scripts/            # ALL utility scripts (Python, Bash, Node.js)
+├── notes/              # ALL project notes, research, documentation
+├── memory/             # Daily logs (YYYY-MM-DD.md format)
+└── [OpenClaw files]    # AGENTS.md, SOUL.md, USER.md, etc.
+```
+
+### Rules for File Placement
+
+**📂 projects/ - Git Repositories & Code**
+- ALL cloned GitHub repositories go here
+- When working on a project, `cd projects/<project-name>` first
+- Create new projects in this directory
+- **Never** clone repos to root or other locations
+
+**📜 scripts/ - Utility Scripts**
+- ALL standalone scripts go here (Python, Bash, Node.js, etc.)
+- One-off automation scripts
+- Data processing scripts
+- **Never** create random `.py`, `.sh`, or `.js` files in root
+
+**📝 notes/ - Documentation & Research**
+- ALL project notes go here
+- Research documents
+- Planning documents
+- Meeting notes
+- **Never** create note files in root
+
+### Before Creating ANY File
+
+1. Identify the file type
+2. Place it in the correct directory:
+   - Code/Repo → `projects/`
+   - Script → `scripts/`
+   - Note/Doc → `notes/`
+3. Use descriptive filenames
+4. If unsure, ask first
+
+### Git Workflow (For projects/ directory)
+
+When working on projects in `projects/`:
+
+1. **Always work from the project directory**
+   ```bash
+   cd projects/<project-name>
+   ```
+
+2. **Branch before making changes**
+   ```bash
+   git checkout -b feature/<description>
+   ```
+
+3. **Commit with clear messages**
+   ```bash
+   git add .
+   git commit -m "Clear description of changes"
+   ```
+
+4. **Push and create PR**
+   ```bash
+   git push origin feature/<description>
+   gh pr create --title "Brief title" --body "Description of changes"
+   ```
+
+5. **Never commit directly to main/master** (unless explicitly instructed)
+
+### Project Organization
+
+For each project in `projects/`:
+- Read the project's README/CONTRIBUTING.md first
+- Follow the project's existing conventions
+- Use the project's preferred branch naming
+- Test changes before committing
+- Create descriptive PRs that explain **why** not just **what**
+
 ## External vs Internal
 
 **Safe to do freely:**
