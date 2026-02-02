@@ -1,0 +1,12 @@
+node_modules/
+.npm/
+.pnpm/
+yarn-error.log
+yarn-debug.log
+dist/
+build/
+.env.local
+data/*.json
+data/*.log
+.DS_Store
+projects
